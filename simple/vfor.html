@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <!-- <script src="https://npmcdn.com/vue@next/dist/vue.js"></script> -->
+  <script src="./vue.js"></script>
+  <style type="text/css">
+    .vermelho {
+      color: red;
+    }
+    .azul {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <table>
+      <tr v-for="item in items" track-by="$index"> 
+        <td v-for="(child, index) in item.children" track-by="$index">
+          <cell :num="index" :text="child"></cell>
+        </td>
+      </tr>
+    </table>
+    <button @click="vai()">Vai</button>
+  </div>
+
+  <script>
+    var data = {items: ['um', 'dois', 'tres']};
+    var P = 200, C = 500;
+    new Vue({
+      el: '#app',
+      data: data,
+      methods: {
+        vai: function () {
+
+          data.items = [];
+          for(var i=0; i<P; i++){
+            var item = {name: 'item '+i, children:[]};
+            for(var j=0; j<C; j++){
+              item.children.push('subitem'+i+'/'+j);
+            }
+            data.items.push(item);
+          }
+          window.t0 = new Date();
+          setTimeout(function(){
+            var delta = new Date() - window.t0;
+            alert(delta)
+          }, 50);
+        }
+      }
+    });
+
+    Vue.component('cell', {
+      props: ['num', 'text'],
+      template: '<span :class="{vermelho: (num % 2) == 0, azul: (num % 2) == 1}">{{text}}</span>'
+    });
+
+  </script>
+</body>
+</html>

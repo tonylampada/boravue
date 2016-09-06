@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <!-- <script src="https://npmcdn.com/vue@next/dist/vue.js"></script> -->
+  <script src="./angular.js"></script>
+  <style type="text/css">
+    .vermelho {
+      color: red;
+    }
+    .azul {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div ng-app="app" ng-controller="MyCtrl">
+    <table>
+      <tr ng-repeat="item in items track by $index">
+        <td ng-repeat="child in item.children track by $index">
+          <cell num="$index" text="{{child}}"></cell>
+        </td>
+      </tr>
+    </table>
+    <button ng-click="vai()">Vai</button>
+  </div>
+
+  <script>
+    angular.module('app', []);
+    angular.module('app').controller('MyCtrl', function($scope){
+      $scope.items = ['um', 'dois', 'tres'];
+      var P = 200, C = 500;
+      $scope.vai = function () {
+
+          $scope.items = [];
+          for(var i=0; i<P; i++){
+            var item = {name: 'item '+i, children:[]};
+            for(var j=0; j<C; j++){
+              item.children.push('subitem'+i+'/'+j);
+            }
+            $scope.items.push(item);
+          }
+          window.t0 = new Date();
+          setTimeout(function(){
+            var delta = new Date() - window.t0;
+            alert(delta)
+          }, 50);
+        }
+    });
+    angular.module('app').directive('cell', function(){
+      return {
+        restrict: 'E',
+        scope:{
+          text: '@',
+          num: '=',
+        },
+        template: '<span ng-class="{vermelho: (num % 2) == 0, azul: (num % 2) == 1}">{{text}}</span>',
+      };
+    })
+  </script>
+</body>
+</html>
