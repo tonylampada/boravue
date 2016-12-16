@@ -8,14 +8,9 @@
 import Hello from './components/Hello.vue'
 
 export default {
+  name: 'app',
   components: {
     Hello
   }
 }
 </script>
-
-<style>
-body {
-  font-family: Helvetica, sans-serif;
-}
-</style>
