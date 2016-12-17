@@ -1,14 +1,12 @@
-const Foo = { template: '<div>foo</div>' };
-const Bar = { template: '<div>bar</div>' };
-const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
-];
-const router = new VueRouter({
-  routes
-});
-const app = new Vue({
-    el: '#app',
-    router,
-});
+Vue.component('foo', {template: '<div>foo</div>'});
+Vue.component('bar', {template: '<div>bar</div>'});
+
+new Vue({
+    router: new VueRouter({
+        routes: [
+            { path: '/foo', component: {template: '<foo></foo>'}},
+            { path: '/bar', component: {template: '<bar></bar>'}},
+        ],
+    }),
+}).$mount('#app');
 
