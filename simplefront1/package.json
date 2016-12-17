@@ -1,0 +1,14 @@
+{
+  "name": "fsstatic2",
+  "version": "0.0.0",
+  "description": "fsstatic",
+  "author": "FreedomSponsors",
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^1.0.0",
+    "gulp-linker": "^0.1.7",
+    "gulp-sass": "^3.0.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}

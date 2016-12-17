@@ -1,0 +1,20 @@
+<div>
+
+    <div class="btn-group" role="group">
+      <h1>{[{m.active_component.title}]}</h1>
+      <button class="btn btn-success" ng-class="{'active': m.showing == 'EXAMPLE'}" ng-click="m.show_example()">Example</button>
+      <button class="btn btn-success" ng-class="{'active': m.showing == 'SOURCE'}" ng-click="m.show_source()">View Source</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+		<div ng-if="m.showing == 'EXAMPLE'" ng-include="m.get_include()"></div>
+		<div ng-if="m.showing == 'SOURCE'">
+            <ul>
+                <li ng-repeat="sourcefile in m.active_component.source_files">
+                    {[{sourcefile.name}]}
+                    <pre>{[{sourcefile.content}]}</pre>
+                </li>
+            </ul>
+		</div>
+    </div>
+</div>
