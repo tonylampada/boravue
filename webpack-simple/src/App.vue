@@ -31,4 +31,10 @@ export default {
 
 @import '~bulma';
 
+/*
+Esse '~' se refere a "node_modules/"
+No caso, node_modules/bulma/package.json tem um atributo main = 'bulma.sass', portanto
+@import '~bulma' eh equivalente a @import '~bulma/bulma.sass';
+*/
+
 </style>
