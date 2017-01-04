@@ -39,7 +39,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~bulma';
 </style>
 
 <style scoped lang="scss">
