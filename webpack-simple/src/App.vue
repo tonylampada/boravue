@@ -1,21 +1,20 @@
 <template>
-  <div class="container">
-  <section>
-    <todo> </todo>
-  </section>
-
-  </div>
+  <MainMenu>
+    <Todo></Todo>
+  </MainMenu>
 </template>
 
 <script>
 import Todo from './components/Todo.vue'
+import MainMenu from './components/MainMenu.vue'
 
 export default {
   data () {
     return {}
   },
   components: {
-    Todo
+    Todo,
+    MainMenu,
   }
 }
 </script>
@@ -30,6 +29,8 @@ export default {
 */
 
 @import '~bulma';
+@import '~font-awesome/css/font-awesome.css';
+@import '~animate.css';
 
 /*
 Esse '~' se refere a "node_modules/"

@@ -1,3 +1,4 @@
+// require('~font-awesome');
 import Vue from 'vue'
 import App from './App.vue'
 
