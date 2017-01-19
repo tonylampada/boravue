@@ -1,12 +1,12 @@
 <template>
-  <MainMenu>
+  <MainLayout>
     <Todo></Todo>
-  </MainMenu>
+  </MainLayout>
 </template>
 
 <script>
 import Todo from './components/Todo.vue'
-import MainMenu from './components/MainMenu.vue'
+import MainLayout from './components/MainLayout.vue'
 
 export default {
   data () {
@@ -14,7 +14,7 @@ export default {
   },
   components: {
     Todo,
-    MainMenu,
+    MainLayout,
   }
 }
 </script>

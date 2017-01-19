@@ -31,7 +31,7 @@ export default {
     remove(item) {
       var idx = this.items.indexOf(item);
       if(idx >= 0){
-        this.items.splice(idx, 1);
+        // this.items.splice(idx, 1);
       }
     }
   }

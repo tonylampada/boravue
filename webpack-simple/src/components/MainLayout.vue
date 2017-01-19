@@ -32,33 +32,7 @@
       <p class="menu-label">
         General
       </p> 
-      <ul class="menu-list">
-        <li>
-          <a href><span class="icon is-small"><i class="fa fa-tachometer"></i></span>Dashboard</a>  
-        </li>
-        <li>
-          <a class="is-active">
-            <span class="icon is-small"><i class="fa fa-bar-chart-o"></i></span>
-            Charts
-            <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
-          </a>  
-          <ul class="collapse in">
-            <li>
-              <a href> Chartist </a>
-            </li>
-            <li>
-              <a href> Chartjs </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a>
-            <span class="icon is-small"><i class="fa fa-laptop"></i></span>
-            UI Features
-            <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
-          </a>  
-        </li>
-      </ul>
+      <TreeMenu :items="menuitems"></TreeMenu>
     </aside>
 
     <section class="app-main">
@@ -68,16 +42,29 @@
 </template>
 
 <script>
+import TreeMenu from './TreeMenu.vue'
+
 export default {
   data () {
     return {
-      show_sidebar: false
+      show_sidebar: false,
+      menuitems: [
+        {icon: 'tachometer', label: 'Dashboard', children:[
+          {label: 'Atirei'},
+          {label: 'O pau no gato'},
+        ]},
+        {icon: 'bar-chart-o', label: 'Bla'},
+        {icon: 'laptop', label: 'blum'},
+      ],
     }
   },
   methods: {
     toggle_sidebar(){
       this.show_sidebar = !this.show_sidebar;
     }
+  },
+  components: {
+    TreeMenu,
   }
 }
 </script>
