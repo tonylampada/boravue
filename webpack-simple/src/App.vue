@@ -1,19 +1,19 @@
 <template>
   <MainLayout>
-    <Todo></Todo>
+    <router-view></router-view>
   </MainLayout>
 </template>
 
 <script>
-import Todo from './components/Todo.vue'
 import MainLayout from './components/MainLayout.vue'
+import VueRouter from 'vue-router'
+import Vue from 'vue'
 
 export default {
   data () {
     return {}
   },
   components: {
-    Todo,
     MainLayout,
   }
 }

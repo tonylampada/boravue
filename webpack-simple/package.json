@@ -10,7 +10,9 @@
     "unit": "cross-env NODE_ENV=test karma start karma.conf.js"
   },
   "dependencies": {
-    "vue": "^2.1.0"
+    "axios": "^0.15.3",
+    "vue": "^2.1.0",
+    "vue-router": "^2.2.0"
   },
   "devDependencies": {
     "animate.css": "^3.5.2",

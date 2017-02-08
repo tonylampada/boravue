@@ -27,7 +27,6 @@
       </div>
     </section>
 
-
     <aside id="sidebar" class="menu app-sidebar animated">
       <p class="menu-label">
         General
@@ -50,8 +49,8 @@ export default {
       show_sidebar: false,
       menuitems: [
         {icon: 'tachometer', label: 'Dashboard', children:[
-          {label: 'Atirei'},
-          {label: 'O pau no gato'},
+          {label: 'Todo', routerpath: '/todo'},
+          {label: 'Issues', routerpath: '/issues'},
         ]},
         {icon: 'bar-chart-o', label: 'Bla'},
         {icon: 'laptop', label: 'blum'},

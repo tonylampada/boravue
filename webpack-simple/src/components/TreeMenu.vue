@@ -10,7 +10,8 @@
             </a>
             <ul class="collapse in" v-if="item.expanded && item.children">
                 <li v-for="child in item.children">
-                  <a href="#">{{child.label}}</a>
+                  <a v-if="!child.routerpath" :href="child.href">{{child.label}}</a>
+                  <router-link v-if="child.routerpath" :to="child.routerpath" active-class="is-active">{{child.label}}</router-link>
                 </li>
             </ul>
         </li>
