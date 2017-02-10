@@ -38,11 +38,13 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
-      {
-        // test: /\.(png|jpg|gif|svg|ttf|eot)$/,
-        // test: /\.(png|jpg|gif|svg|ttf|eot)(\?.*$|$)/,
-        test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?\S*)?$/,
-        loader: 'file-loader',
+      { 
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+        loader: "url-loader?limit=10000&minetype=application/font-woff" 
+      },
+      { 
+        test: /\.(jpe|jpg|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+        loader: "file-loader",
         options: {
           name: '[name].[ext]?[hash]'
         }
