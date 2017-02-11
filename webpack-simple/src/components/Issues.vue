@@ -22,16 +22,17 @@
 <script>
 import AppApi from 'apijs'
 
+var DATA = {
+  username: '',
+  repos: [],
+  repo: null,
+  issues: [],
+};
 
 export default {
   name: 'Issues',
   data () {
-    return {
-      username: '',
-      repos: [],
-      repo: null,
-      issues: [],
-    }
+    return DATA;
   },
   methods: {
     findrepos(){

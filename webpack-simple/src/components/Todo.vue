@@ -15,13 +15,16 @@
 </template>
 
 <script>
+
+var DATA = {
+  text: '',
+  items: []
+};
+
 export default {
   name: 'Todo',
   data () {
-    return {
-      text: '',
-      items: []
-    }
+    return DATA;
   },
   methods: {
     add() {
