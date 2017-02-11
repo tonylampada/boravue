@@ -20,7 +20,8 @@
 </template>
 
 <script>
-import AppApi from 'src/api/api.js'
+import AppApi from 'apijs'
+
 
 export default {
   name: 'Issues',
@@ -34,14 +35,14 @@ export default {
   },
   methods: {
     findrepos(){
-      AppApi.list_repos(this.username).then(response => {
-        this.repos = response.data;
+      AppApi.list_repos(this.username).then(({data}) => {
+        this.repos = data;
       });
     },
     findIssues(){
-      AppApi.list_issues(this.repo.owner.login, this.repo.name).then(response => {
-        this.issues = response.data;
-      })
+      AppApi.list_issues(this.repo.owner.login, this.repo.name).then(({data}) => {
+        this.issues = data;
+      });
     },
   }
 }

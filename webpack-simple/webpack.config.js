@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
+
 module.exports = {
   // entry: './src/main.js',
   entry: {
@@ -53,6 +54,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.common.js',
       'src': path.resolve(__dirname, 'src'),
+      'apijs': path.resolve(__dirname, process.env.NODE_ENV == 'development' ? 'src/api/apimock.js' : 'src/api/api.js'),
     }
   },
   devServer: {
