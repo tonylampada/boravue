@@ -20,28 +20,30 @@
 </template>
 
 <script>
-import AppApi from 'src/api/api.js'
+import AppApi from 'apijs'
+
+var DATA = {
+  username: '',
+  repos: [],
+  repo: null,
+  issues: [],
+};
 
 export default {
   name: 'Issues',
   data () {
-    return {
-      username: '',
-      repos: [],
-      repo: null,
-      issues: [],
-    }
+    return DATA;
   },
   methods: {
     findrepos(){
-      AppApi.list_repos(this.username).then(response => {
-        this.repos = response.data;
+      AppApi.list_repos(this.username).then(({data}) => {
+        this.repos = data;
       });
     },
     findIssues(){
-      AppApi.list_issues(this.repo.owner.login, this.repo.name).then(response => {
-        this.issues = response.data;
-      })
+      AppApi.list_issues(this.repo.owner.login, this.repo.name).then(({data}) => {
+        this.issues = data;
+      });
     },
   }
 }
