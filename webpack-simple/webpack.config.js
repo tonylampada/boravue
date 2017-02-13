@@ -56,7 +56,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.common.js',
       'src': path.resolve(__dirname, 'src'),
-      'apijs': path.resolve(__dirname, process.env.NODE_ENV == 'development' ? 'src/api/apimock.js' : 'src/api/api.js'),
+      'apijs': path.resolve(__dirname, process.env.NODE_ENV in {development: 1, test: 1} ? 'src/api/apimock.js' : 'src/api/api.js'),
     }
   },
   devServer: {

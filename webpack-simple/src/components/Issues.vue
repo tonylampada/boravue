@@ -36,12 +36,12 @@ export default {
   },
   methods: {
     findrepos(){
-      AppApi.list_repos(this.username).then(({data}) => {
-        this.repos = data;
+      return AppApi.list_repos(this.username).then((response) => {
+        this.repos = response.data;
       });
     },
     findIssues(){
-      AppApi.list_issues(this.repo.owner.login, this.repo.name).then(({data}) => {
+      return AppApi.list_issues(this.repo.owner.login, this.repo.name).then(({data}) => {
         this.issues = data;
       });
     },
