@@ -1,5 +1,5 @@
 <template>
-  <MainLayout>
+  <MainLayout :menuitems="menuitems">
     <router-view></router-view>
   </MainLayout>
 </template>
@@ -11,7 +11,16 @@ import Vue from 'vue'
 
 export default {
   data () {
-    return {}
+    return {
+      menuitems: [
+        {icon: 'tachometer', label: 'Dashboard', children:[
+          {label: 'Todo', routerpath: '/todo'},
+          {label: 'Issues', routerpath: '/issues'},
+        ]},
+        {icon: 'bar-chart-o', label: 'Bla'},
+        {icon: 'laptop', label: 'blum'},
+      ],
+    }
   },
   components: {
     MainLayout,

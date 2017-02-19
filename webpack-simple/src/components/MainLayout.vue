@@ -47,16 +47,11 @@ export default {
   data () {
     return {
       show_sidebar: false,
-      menuitems: [
-        {icon: 'tachometer', label: 'Dashboard', children:[
-          {label: 'Todo', routerpath: '/todo'},
-          {label: 'Issues', routerpath: '/issues'},
-        ]},
-        {icon: 'bar-chart-o', label: 'Bla'},
-        {icon: 'laptop', label: 'blum'},
-      ],
     }
   },
+  props: [
+    'menuitems'
+  ],
   methods: {
     toggle_sidebar(){
       this.show_sidebar = !this.show_sidebar;
